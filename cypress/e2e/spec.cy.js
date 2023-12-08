@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 describe('Проверка элементов на странице', () => {
   beforeEach(() => {
-    // Заходим на вашу страницу перед каждым тестом
+    // Заходим на эту страницу перед каждым тестом
     cy.visit('https://sqlverifier-live-6e21ca0ed768.herokuapp.com');
   });
 
