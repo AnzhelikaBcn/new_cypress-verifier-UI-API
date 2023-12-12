@@ -8,11 +8,15 @@
     "cy:run": "npx cypress run",
     "cy:run:first": "npm run cy:run --spec 'cypress/e2e/first.cy.js'",
     "cy:run:second": "npm run cy:run --spec 'cypress/e2e/second.cy.js'",
-    "cy:run:all": "npm run cy:run:first && npm run cy:run:second"
+    "cy:run:all": "npm run cy:run:first && npm run cy:run:second",
+    "cy:run:spec-5-2-2": "npm run cy:run --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config'"
   },
   "keywords": [
     "cypress"
   ],
+  "cypress": {
+    "videosFolder": "cypress/videos"
+  },
   "author": "AnzhelikaPikulina",
   "license": "ISC",
   "devDependencies": {
