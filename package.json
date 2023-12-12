@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run"
+    "cy:run": "npx cypress run",
+    "cy:run:first": "npm run cy:run --spec 'cypress/e2e/first.cy.js'",
+    "cy:run:second": "npm run cy:run --spec 'cypress/e2e/second.cy.js'",
+    "cy:run:all": "npm run cy:run:first && npm run cy:run:second"
   },
   "keywords": [
     "cypress"
