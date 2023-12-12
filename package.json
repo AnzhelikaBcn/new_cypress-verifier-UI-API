@@ -13,7 +13,13 @@
     "cy:test:staging:dashboard:config-5-2": "npx cypress run --config-file 'cypress-5-2.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js'",
     "cy:test:staging:dashboard:config-5-2-3": "npx cypress run --config-file 'cypress-5-2-3.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js'",
     "cy:open:config-5-2": "npx cypress open --config-file cypress-5-2.config.js",
-    "cy:open:config-5-2-3": "npx cypress open --config-file cypress-5-2-3.config.js"
+    "cy:open:config-5-2-3": "npx cypress open --config-file cypress-5-2-3.config.js",
+    "cy:run:spec-chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/spec.cy.js' --config-file 'cypress-5-2.config.js'",
+    "cy:run:spec-5-2-2-firefox": "npx cypress run --browser firefox --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config.js'",
+    "cy:run:sequential": "npm run cy:run:spec-chrome && npm run cy:run:spec-5-2-2-firefox",
+    "cy:run:sequential:dashboard": "npm run cy:run:spec-chrome:dashboard && npm run cy:run:spec-5-2-2-firefox:dashboard",
+    "cy:run:spec-chrome:dashboard": "npx cypress run --browser chrome --spec 'cypress/e2e/spec.cy.js' --config-file 'cypress-5-2.config.js' --record",
+    "cy:run:spec-5-2-2-firefox:dashboard": "npx cypress run --browser firefox --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config.js' --record"
   },
   "keywords": [
     "cypress"
