@@ -9,7 +9,11 @@
     "cy:run:first": "npm run cy:run --spec 'cypress/e2e/first.cy.js'",
     "cy:run:second": "npm run cy:run --spec 'cypress/e2e/second.cy.js'",
     "cy:run:all": "npm run cy:run:first && npm run cy:run:second",
-    "cy:run:spec-5-2-2": "npm run cy:run --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config'"
+    "cy:run:spec-5-2-2": "npm run cy:run --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config'",
+    "cy:test:staging:dashboard:config-5-2": "npx cypress run --config-file 'cypress-5-2.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js'",
+    "cy:test:staging:dashboard:config-5-2-3": "npx cypress run --config-file 'cypress-5-2-3.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js'",
+    "cy:open:config-5-2": "npx cypress open --config-file cypress-5-2.config.js",
+    "cy:open:config-5-2-3": "npx cypress open --config-file cypress-5-2-3.config.js"
   },
   "keywords": [
     "cypress"
