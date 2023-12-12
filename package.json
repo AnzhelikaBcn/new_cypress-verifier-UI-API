@@ -10,16 +10,16 @@
     "cy:run:second": "npm run cy:run --spec 'cypress/e2e/second.cy.js'",
     "cy:run:all": "npm run cy:run:first && npm run cy:run:second",
     "cy:run:spec-5-2-2": "npm run cy:run --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config'",
-    "cy:test:staging:dashboard:config-5-2": "npx cypress run --config-file 'cypress-5-2.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js'",
-    "cy:test:staging:dashboard:config-5-2-3": "npx cypress run --config-file 'cypress-5-2-3.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js'",
+    "cy:test:staging:dashboard:config-5-2": "npx cypress run --config-file 'cypress-5-2.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js' --record --key 586a1f68-0b44-4636-bb1d-3f75f97a9689",
+    "cy:test:staging:dashboard:config-5-2-3": "npx cypress run --config-file 'cypress-5-2-3.config.js' --spec 'cypress/e2e/spec-5-2-2.cy.js' --record --key 586a1f68-0b44-4636-bb1d-3f75f97a9689",
     "cy:open:config-5-2": "npx cypress open --config-file cypress-5-2.config.js",
     "cy:open:config-5-2-3": "npx cypress open --config-file cypress-5-2-3.config.js",
     "cy:run:spec-chrome": "npx cypress run --browser chrome --spec 'cypress/e2e/spec.cy.js' --config-file 'cypress-5-2.config.js'",
     "cy:run:spec-5-2-2-firefox": "npx cypress run --browser firefox --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config.js'",
     "cy:run:sequential": "npm run cy:run:spec-chrome && npm run cy:run:spec-5-2-2-firefox",
-    "cy:run:sequential:dashboard": "npm run cy:run:spec-chrome:dashboard && npm run cy:run:spec-5-2-2-firefox:dashboard",
-    "cy:run:spec-chrome:dashboard": "npx cypress run --browser chrome --spec 'cypress/e2e/spec.cy.js' --config-file 'cypress-5-2.config.js' --record",
-    "cy:run:spec-5-2-2-firefox:dashboard": "npx cypress run --browser firefox --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config.js' --record"
+    "cy:run:spec-chrome:dashboard": "npx cypress run --browser chrome --spec 'cypress/e2e/spec.cy.js' --config-file 'cypress-5-2.config.js' --record --key 586a1f68-0b44-4636-bb1d-3f75f97a9689",
+    "cy:run:spec-5-2-2-firefox:dashboard": "npx cypress run --browser firefox --spec 'cypress/e2e/spec-5-2-2.cy.js' --config-file 'cypress-5-2.config.js' --record  --key 586a1f68-0b44-4636-bb1d-3f75f97a9689",
+    "cy:run:sequential:dashboard": "npm run cy:run:spec-chrome:dashboard && npm run cy:run:spec-5-2-2-firefox:dashboard"
   },
   "keywords": [
     "cypress"
