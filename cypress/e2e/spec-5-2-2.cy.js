@@ -1,6 +1,12 @@
 /// <reference types="cypress" />
 
-//import "./support/commands";
+before(() => {
+  cy.log("Main before hook executed");
+});
+
+after(() => {
+  cy.log("Main after hook executed");
+});
 
 describe("Проверка элементов на странице", () => {
   beforeEach(() => {
