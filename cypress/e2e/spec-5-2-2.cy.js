@@ -2,6 +2,9 @@
 
 before(() => {
   cy.log("Main before hook executed");
+
+  cy.visit("");
+  cy.log("Current base url" + Cypress.config("baseUrl"));
 });
 
 after(() => {
