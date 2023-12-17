@@ -34,16 +34,10 @@ Cypress.Commands.add("checkNthChild", (index, expectedText) => {
 });
 
 Cypress.Commands.add("login", (username, password) => {
-  cy.request({
-    method: "POST",
-    url: `${Cypress.config("baseUrl")}/api/account/login`,
-    body: {
-      username: username,
-      password: password,
-    },
-  }).then((response) => {
-    expect(response.status).to.eq(200);
-    expect(response.body).to.have.property("token");
-    Cypress.env("token", response.body.token);
-  });
+  cy.visit("/login"); // Посещаем страницу входа
+  cy.get("#username").type(username); // Предположим, что поле логина имеет id='username'
+  cy.get("#password").type(password); // Предположим, что поле пароля имеет id='password'
+  cy.get("form").submit(); // Отправляем форму входа
+
+  cy.url().should("include", "/?page=1&sort=id,asc"); // Проверяем, что перешли на страницу после входа
 });
