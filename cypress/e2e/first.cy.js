@@ -1,25 +1,25 @@
-const { before } = require("cypress/types/lodash");
+/*
+const textData = require("../fixtures/todoItemsText.json");
 
-describe("First tests suit", () => {
-  before(() => {
-    cy.log("before hook executed");
-  });
+describe.only("To do list", () => {
+  it("Add items", () => {
+    const inputField = '[data-test="new-todo"]';
 
-  it("First test", () => {
     cy.visit("/todo");
-    //cy.log("test is still going");
-    cy.log("Current base url" + Cypress.config("baseUrl"));
-    cy.get("h1").debug().should("be.visible");
-  });
 
-  it.only("Test for .then()", () => {
-    cy.visit("/todo");
-    cy.get('[data-test="new-todo"]').type("test{enter}");
-    cy.get('[data-test="new-todo"]').type("test{enter}");
-    cy.get('[data-test="new-todo"]').type("test{enter}");
-    cy.get(".todo-list li").then((number) => {
-      expect(number.length).to.equal(5);
-      //assert.equal(number.length, 5, "Array number is right");
+    textData.forEach((item) => {
+      cy.enterText(inputField, item).debug();
     });
+
+    // cy.log(textData[0].text);
+    // cy.enterText(inputField, textData[0].text);
+    // cy.enterText(inputField, textData[1].text);
+    // cy.enterText(inputField, textData[2].text);
+
+    // Получаем элемент по селектору, в него вводим тексt и нажимаем кнопку энтер:
+    //cy.get('[data-test="new-todo"]').type("buy milk{enter}");
+    //cy.get('[data-test="new-todo"]').type("take rest{enter}");
+    //cy.get('[data-test="new-todo"]').type("enjoy your life{enter}");
   });
 });
+*/

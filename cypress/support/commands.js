@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("enterText", (selector, text) => {
+  cy.get('[data-test="new-todo"]').type(`${text}{enter}`);
+});
+
+Cypress.Commands.add("checkNthChild", (index, expectedText) => {
+  const selector = `:nth-child(${index}) > h3`;
+  cy.get(selector).should("have.text", expectedText);
+});
