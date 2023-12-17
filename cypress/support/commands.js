@@ -32,3 +32,18 @@ Cypress.Commands.add("checkNthChild", (index, expectedText) => {
   const selector = `:nth-child(${index}) > h3`;
   cy.get(selector).should("have.text", expectedText);
 });
+
+Cypress.Commands.add("login", (username, password) => {
+  cy.request({
+    method: "POST",
+    url: `${Cypress.config("baseUrl")}/api/account/login`,
+    body: {
+      username: username,
+      password: password,
+    },
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    expect(response.body).to.have.property("token");
+    Cypress.env("token", response.body.token);
+  });
+});
