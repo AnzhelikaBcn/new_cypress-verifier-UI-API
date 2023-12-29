@@ -1,4 +1,4 @@
-/*
+/* new
 before(() => {
   cy.log("Main before hook executed");
 });
