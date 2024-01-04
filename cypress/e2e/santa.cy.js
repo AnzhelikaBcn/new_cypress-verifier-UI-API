@@ -5,5 +5,6 @@ describe("santa login - UI", () => {
         cy.get(':nth-child(3) > .frm').type("angela.pikulina+test@gmail.com");
         cy.get(':nth-child(4) > .frm').type("test1111");
         cy.contains('Войти').click();
+        cy.contains("Коробки").should("exist");
     });
 });
