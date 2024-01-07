@@ -24,13 +24,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("changePassword", (userName, newPassword) => {
-  cy.contains(userName).click({ force: true });
-  cy.get(".layout-column-start > :nth-child(1) > .frm").type(newPassword);
-  cy.get(
-    ":nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm"
-  ).type(newPassword);
-  cy.get(".layout-row-end > .btn-service").click();
+Cypress.Commands.add("changePassword", (oldPassword, newPassword) => {
+  cy.get('[data-cy="accountMenu"] > .d-flex > span').click({ force: true }); // account
+  cy.get('[data-cy="passwordItem"] > span', { timeout: 10000 }).click({ force: true }); //password
+  cy.get('[data-cy="currentPassword"]').clear().type(oldPassword);
+  cy.get('[data-cy="newPassword"]').type(newPassword);
+  cy.get('[data-cy="confirmPassword"]').type(newPassword);
+  cy.get('[data-cy="submit"] > span').click(); //save
 
 })
 
