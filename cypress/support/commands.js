@@ -24,20 +24,13 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("enterText", (selector, text) => {
-  cy.get('[data-test="new-todo"]').type(`${text}{enter}`);
-});
+Cypress.Commands.add("changePassword", (userName, newPassword) => {
+  cy.contains(userName).click({ force: true });
+  cy.get(".layout-column-start > :nth-child(1) > .frm").type(newPassword);
+  cy.get(
+    ":nth-child(4) > .form-page-group__main > .layout-column-start > :nth-child(2) > .frm"
+  ).type(newPassword);
+  cy.get(".layout-row-end > .btn-service").click();
 
-Cypress.Commands.add("checkNthChild", (index, expectedText) => {
-  const selector = `:nth-child(${index}) > h3`;
-  cy.get(selector).should("have.text", expectedText);
-});
+})
 
-Cypress.Commands.add("login", (username, password) => {
-  cy.visit("/login"); // Посещаем страницу входа
-  cy.get("#username").type(username); // Предположим, что поле логина имеет id='username'
-  cy.get("#password").type(password); // Предположим, что поле пароля имеет id='password'
-  cy.get("form").submit(); // Отправляем форму входа
-
-  cy.url().should("include", "/?page=1&sort=id,asc"); // Проверяем, что перешли на страницу после входа
-});
