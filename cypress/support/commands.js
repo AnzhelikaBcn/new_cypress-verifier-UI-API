@@ -33,4 +33,3 @@ Cypress.Commands.add("changePassword", (oldPassword, newPassword) => {
   cy.get('[data-cy="submit"] > span').click(); //save
 
 })
-

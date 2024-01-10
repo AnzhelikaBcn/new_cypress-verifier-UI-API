@@ -7,7 +7,8 @@ describe("verifier login - UI", () => {
     it("user cannot login with old password - UI", () => {
 
         const oldPassword = "user";
-        const newPassword = faker.internet.password(5);
+        const newPassword = "user1";
+     //   const newPassword = faker.internet.password(5);
         cy.log(newPassword);
         
         cy.visit("https://sqlverifier-live-6e21ca0ed768.herokuapp.com");
@@ -42,4 +43,6 @@ describe("verifier login - UI", () => {
         cy.changePassword(newPassword, oldPassword);
 
     });
+
+    
 });
